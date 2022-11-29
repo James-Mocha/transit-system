@@ -1,0 +1,180 @@
+
+Features Tested: 
+================================================================
+1) Fares are deducted from a card balance when riding bus (specifically when entering the bus)
+
+Mark: 0.25/0.25
+
+Feedback: Works as expected
+
+================================================================
+
+2) Fares are deducted when exiting subways
+
+Mark: 0.25/0.25
+
+Feedback: Works as expected
+
+================================================================
+
+3) Individual trips are capped at $6 e.g. riding a subway for three hours without exiting = $6 max charge (travel is free for 2hrs from the initial entry if trip during that two hours is capped)
+
+Mark: 0/0.25
+
+Feedback: When transfering from a bus to subway within 2 hours the trip is capped at $4 instead of $6. 
+When riding the subway for three hours without existing the fare keeps adding $0.50 per station even after $6. 
+================================================================
+
+4) New trip begins after this (i.e. riding subway for 3 hours, and then entering a bus = new charge for the bus)
+
+Mark: 0/0.25
+
+Feedback: When riding a subway for 3+ hours then entering a bus the subway fare over-charges and bus fare is skipped.
+
+================================================================
+
+5) Cardholder: Users can change their name and cannot change their email address. 
+
+Mark: 0.25/0.25
+
+Feedback: Works as expected
+
+================================================================
+
+6) Cardholder: They can add multiple travel cards and can remove travel cards.
+
+Mark: 0.25/0.25
+
+Feedback: Works as expected
+
+================================================================
+
+7) Cardholders can add $10, $20, $50 to their card balance at a time
+
+Mark: 0/0.25
+
+Feedback: Also allows for other values
+
+================================================================
+
+8) If the next entrance (into a subway or bus) will move your balance from a positive to a negative number, the system will let you pay
+
+Mark: 0.25/0.25
+
+Feedback: Works as expected
+
+================================================================
+
+9) If your card balance is already negative (balance <= 0): the system will prevent any further entrances 
+
+Mark: 0.25/0.25
+
+Feedback: Works as expected
+
+================================================================
+
+10) Users can also view their three most recent trips, suspend a stolen card's activity, and track their average transit cost per month 
+
+Mark: 0.25/0.25
+
+Feedback: Works as expected
+
+================================================================
+
+11) Admin user: Can view daily report that shows all fares collected each day and the total number of stops/stations reached by all cardholders
+
+Mark: 0.25/0.25
+
+Feedback: Works as expected
+
+================================================================
+
+12) There is an easy to use input and clear output system.
+
+Mark: 0.25/0.25
+
+Feedback: Works as expected, but more explanation in your features.txt would have been better
+
+================================================================
+
+13) Trips should only work in one direction for the bus, and should not loop back once it reaches the last stop.
+
+Mark: 0/0.25
+
+Feedback: Buses work in both directions
+
+================================================================
+
+14) The subway should be bidirectional, they should be able to go from s->...i->...->t, and also  t->...i->...->s, for some starting stop s, and target stop t.
+
+Mark: 0.25/0.25
+
+Feedback: Works as expected
+----------------------------------------------------------------
+
+TOTAL FEATURES MARK: 2.5/3.5
+
+================================================================
+
+CODE ARCHITECTURE: 
+----------------------------------------------------------------
+Mark: 3/3
+
+Feedback:
+1 Given for use of modularity
+1 Given for use of inheritance 
+1 Given for design patterns
+
+================================================================
+
+CODE STYLE: 
+----------------------------------------------------------------
+Mark: 2/2
+
+Feedback: Good, just make sure all unnecessary comments are removed or next time (TransitSystem)
+
+
+================================================================
+
+Documentation: 
+----------------------------------------------------------------
+Mark: 0.5/0.5
+
+Feedback: 
+0.5 Given for good javadocs
+
+================================================================
+
+USE OF SCRUM: 
+----------------------------------------------------------------
+Mark: 0.5/0.5
+
+Feedback: 
+0.5 Given for use of scrum
+
+================================================================
+
+USE OF GIT: 
+----------------------------------------------------------------
+Mark: 0.5/0.5
+
+Feedback: 
+Git commits happen throughout project, good commit messages
+Okay use of branches, make sure you're using them for each task not each person
+
+================================================================
+
+BONUS MARK: 
+----------------------------------------------------------------
+Mark: 0/0.5
+
+Feedback: 
+No bonus features
+
+================================================================
+
+TOTAL MARK: 9/10
+
+If you feel there was an error in the marking of an assignment, you may request a remark using this form: https://forms.gle/93YZRXawf8NfqEAm6
+You must give a specific reason for the request, referring to a possible error or omission by the marker. Please keep in mind that your grade may stay the same, may increase, or may even decrease, after your remark request is assessed.
+Remark requests MUST be received within one week of when the grade was released.

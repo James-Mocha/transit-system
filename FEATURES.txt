@@ -1,0 +1,198 @@
+=====
+ADD INSTRUCTIONS FOR HOW TO RUN/USE YOUR PROGRAM HERE:
+e.g. What format should we use to input data or add data to events.txt? Anything else we need to know in order to use your program?
+=====
+
+Before you could run the program, you must complete events.txt first with your list of commands, line by line, IN ORDER (by time or by logical order).
+
+A different command should be on a separate line.
+
+============ Commands ============
+Only commands in following format will be executed (Note: case sensitive):
+
+* Create new Map:      Creates a new map with given name and fares
+* Create Bus Route:    Create a new bus route, with given stations and route name
+* Create Subway Route: Create a new subway route, with given stations and route name
+* Create new Card:     Creates a new card for given user and card id(length 5 int only),
+		       and automatically adds this card to user's wallet.
+* Register User:       Create a new user with given name and email.
+* Enter/Exit Station:  Enter/exit bus/subway station with given card and time.
+* Add balance:         Adds 20/30/50 to given card.
+* View balance:        View balance of given card.
+* Suspend Stolen Card: Suspend given card if stolen.
+* Reactivate Card:     Reactivate given card.
+* Remove Card:	       Remove a card from given user's wallet.
+* Add Card:            Add a card to user's wallet if not already.
+* Change User name:    Change the user's name to new name.
+* View 3 recent Trips: View the last 3 trips a user had.
+* View cost(stats):    View the daily fare collected and number of stations reached by 		               all users on given day
+* Get monthly cost:    Views the monthly travel cost of user
+
+============ Format ============
+Only commands in following format will be executed (Note: case sensitive):
+
+* Create new Map:      CreateMap, Map name, Subway fare, Bus fare, Cap fare
+* Create Bus Route:    CreateRoute, BUS, [stopA, stopB, ...], route name
+* Create Subway Route: CreateRoute, SUBWAY, [stationA, stationB, ...], route name
+* Create new Card:     CreateCard, userName, cardID(5 int)
+* Register User:       CreateUser, name, email
+* Enter/Exit Station:  TapCard, IN/OUT, BUS/SUBWAY, yyyy-MM-dd HH:mm, cardID, station name
+* Add balance:         AddBalance, cardID, amount(20/30/50)
+* View balance:        ViewBalance, cardID
+* Suspend Stolen Card: SuspendCard, cardID
+* Reactivate Card:     ReactivateCard, cardID
+* Add Card:            AddCard, userName, cardID
+* Remove Card:	       RemoveCard, userName, cardID
+* Change User name:    ChangeName, old userName, new userName 
+* View 3 recent Trips: ViewRecent, userName
+* View cost(stats):    ViewOperatingCost, yyyy-mm-dd
+* Get monthly cost:    ViewMonthlyCost, userName, yyyy, mm
+
+============ Note ============
+You have to create a map first (CreateMap, Map name, Subway fare, Bus fare, Cap fare)
+
+Then you will need to create bus/subway routes (CreateRoute, BUS/SUBWAY, [stopA, stopB, ...], route name)
+
+A bus route has at least one intersection with the subway.
+
+If you are a new user, you will have to register yourself first
+
+Create card automatically puts it in your wallet. You can remove existing card or add a card that was removed.
+
+If you want to enter/exit a bus/station, you will have to tap your card for both.
+
+If your card balance is negative, you cannot enter a station.
+
+If your card is suspended, you cannot enter a station.
+
+If you exit without legally entering, you will fail to exit, and you will have to consult with an employee at the station to see if it was a system error or an illegal action, and pay the amount you were supposed to pay (assuming employee would perform this action)
+
+If you want to add balance, it can only be in amount of 20/30/50, other amounts would fail.
+
+You can view the balance of your card anytime.
+
+You can suspend your card if it was stolen, or reactivate it again if you found it.
+
+You can only add a card if it already exits, otherwise create the card that you want to add first. You can only remove a card that was already in your wallet.
+
+You can only change your name, not your email.
+
+You can view your last 3 trips, and your monthly travel cost.
+
+You can view the daily operation cost of the transit system.
+
+A trip is considered to be continuous as long as all entrances are within 2 hours of the time of the initial entrance that began the trip, for joint trips only. That is, for example, a person gets off a bus and get on a subway at the same station.
+
+=====
+LIST ALL FEATURES THAT YOU WORKED ON HERE, AND HOW TO INPUT RELEVANT DATA FOR THE FEATURE (IF APPLICABLE)
+=====
+
+============ Feature 1 ============
+Description: Tapping a card at a station
+
+Usage Instructions: 
+
+Format: TapCard, IN/OUT, BUS/SUBWAY, time(yyyy-MM-dd HH:mm), cardID
+Output: If the tap was successful, it will print "CardID entered/exited StationName"
+If there is a payment, it will print "CardID paid Amount"
+If you fail to enter(eg. invalid balance, illegal action): it will print "CardID failed to enter"
+
+Design Decisions: We uses the OOP principle, this command is called on distinct objects of user and card. This is performed by the controller(Act and TransitSystem together).
+
+
+============ Feature 2 ============
+
+Description: Customized map
+
+Usage Instructions:
+
+Format: CreateMap, Map name, Subway fare, Bus fare, Cap fare
+        CreateRoute, BUS/SUBWAY, [stopA, stopB, ...], route name
+Output: If successfully created, it will print "MapName/RouteName successfully created"
+We allow clients to create customized map and fare, so the system can be used in different cities.
+
+Design Decisions: (OOP) We created Station as an abstract class, which has child classes of Busstation and Subwaystation, since the two are similar, and this will be useful when we store information that includes both type together(e.g. in the map). The map stores the routes as list of Stations in a hashmap.
+
+
+============ Feature 3 ============
+
+Description: User System
+
+Usage Instructions: 
+Format: 
+CreateUser, name, email
+ViewHistory, userName
+ChangeName, old userName, new userName
+AddCard, userName, cardID
+RemoveCard, userName, cardID
+
+As a user, you should register yourself first, then you can view your recent 3 trips, change your name, manage your wallat
+
+Output: 
+If successfully registered, it prints the id of a new card for you
+If other functions were successful, it will give a successful notification and requested information(if applicable)
+
+Design Decisions: (OOP) Each User object stores its own information, with all private variable so all information will be secured, only certain fields can allowed to be viewed or changed safely within the system. It is also linked to card objects, which makes tracking each user's card easy. This acts as the model in MVC design pattern.
+
+
+
+============ Feature 4 ============
+
+Description: Card System
+
+Usage Instructions: 
+Format: 
+CreateCard, userName
+AddBalance, cardID, amount(20/30/50)
+ViewBalance, cardID
+SuspendCard, cardID
+ReactivateCard, cardID
+
+For each card, you can add fund in 20/30/50, view balance, suspend if stolen, and reactivate if needed
+
+Output: If successfully created card, it will print the id of the new card
+If other functions were successful, it will give a successful notification and requested information(if applicable)
+
+Design Decisions: (OOP) Each Card object stores its own information, with all private variable so all information will be secured, only certain fields can allowed to be viewed or changed safely within the system. Each card object is linked to its User, which makes it easy to get it's user's information. This also acts as the model in MVC design pattern.
+
+
+============ Feature 5 ============
+
+Description: System
+
+Usage Instructions: 
+Format:
+ViewCost
+
+
+This is composed of several classes that composes the underlying structure and is uncharge of storing information and changing the model. The input reader class reads the input and gives relevant output, the Act class calculates fare and is in charge of collecting fare from cards. The system stores all the users and trips.
+
+Design Decisions: This acts as the controller which reads input and changes the model, and then gives relevant output in MVC. It also acts as the observer which keeps track of all changes in model. We have written statistic function which gives the daily operating costs based on information stored in the system. It can be extensible for further request from the client, such as monthly operating costs, average cost per user, etc. It keeps all users, all cards, all exiting/entering with relevant information.
+
+============ Feature 6 ============
+
+Description: Trip and point
+
+Usage Instructions: 
+
+Format: underlying implementation
+
+Design Decisions: We use the principle of OOP. We create two classes, Trip and Point. Point is created and stores information on when time a card enters/exits what station at what time, and Trip stores a list of Points. This  trip is then stored in card and user, therefore the TransitSystem can know who has been to where without keeping everything in the system.
+
+======
+
+Note: If you have design decisions that don't fit under a specific feature, but are instead relevant to multiple features, feel free to include them at the bottom of this file here.
+
+OTHER NOTES
+It seems like something went wrong with our GitHub repo at some point. A team member had an error occur during a merge, so he deleted his files and re-git-cloned. After he opened the re-cloned project in eclipse, eclipse created two srcs and would not treat transit app as a package. We didn't know what was going on and we emailed and Prof said we can explain it in this file. So if you git cloned and have the same problem, please try download file manually or other ways that we do not know. We can also send you a zip version of our code.
+We have provided some sample inputs for you in events.txt in transitapp, and we also provide the output styles that we should have, in sample Output.txt, if you would like to change the file path, do so in InputReader
+
+Thanks :)
+
+
+
+
+
+
+
+

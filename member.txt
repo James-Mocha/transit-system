@@ -1,0 +1,12 @@
+member:
+name : junmin fang
+student Number:1002206365 
+
+name:Yi Han
+student Number:1005776545
+
+name:Kaicheng Peng
+student Number:1005735411
+
+name:Hui Zhu
+student Number: 1005860828

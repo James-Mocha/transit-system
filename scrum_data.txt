@@ -1,0 +1,28 @@
+INSTRUCTIONS
+==============
+Open this template link:
+https://docs.google.com/spreadsheets/d/1YL_HWNOYLMrBP4rRTaieM-9eADdnLroltEK3f0Iduws/edit?usp=sharing
+
+File > Make a copy
+
+In the copy that opens up: Click the green Share button in the top right corner, and add the email addresses of your teammates as collaborators ("Editor" role).
+
+When the product backlog is ready (this should be the FIRST THING you do BEFORE coding begins!), click "Share" again, and under the "Get link" subheading choose "Anyone with the link: Anyone on the internet with this link can view". Then, copy/paste the URL (or click "Copy link") and paste it in this file below. Git add, git commit and git push this file -- this will count as submitting your product backlog.
+
+==============
+ 
+
+
+<<<<<<< HEAD
+Your link here:
+https://docs.google.com/spreadsheets/d/1fdJY1GH-sFSoFNy-QUyP77dUfzsbcpVyKz6MxIh6Upw/edit#gid=0
+=======
+Your link here: https://docs.google.com/spreadsheets/d/1fdJY1GH-sFSoFNy-QUyP77dUfzsbcpVyKz6MxIh6Upw/edit#gid=0
+
+>>>>>>> a33ae5d8351eff9a523cd38ba191a23de9ce006a
+
+
+
+
+
+
