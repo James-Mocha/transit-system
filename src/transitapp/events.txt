@@ -1,0 +1,74 @@
+CreateMap, Toronto, 0.5, 2, 4
+CreateRoute, BUS, ["A", "B", "C", "D"], BusRoute
+CreateRoute, SUBWAY, ["B", "Y", "X", "R", "E", "T", "P", "G", "V"], SubwayRoute
+CreateUser, User1, user@gmail.com
+CreateCard, User1, 12345
+CreateCard, User1, 10001
+
+ViewBalance, 12345
+TapCard, IN, BUS, 1999-12-31 00:01, 12345, "A"
+TapCard, OUT, BUS, 1999-12-31 01:01, 12345, "D"
+ViewBalance, 12345
+
+ViewBalance, 12345
+TapCard, IN, SUBWAY, 1999-12-31 01:10, 12345, "B"
+TapCard, OUT, SUBWAY, 1999-12-31 02:01, 12345, "R"
+ViewBalance, 12345
+
+ViewBalance, 12345
+TapCard, IN, SUBWAY, 1999-12-31 03:01, 12345, "B"
+TapCard, OUT, SUBWAY, 1999-12-31 04:01, 12345, "B"
+ViewBalance, 12345
+
+ViewBalance, 10001
+TapCard, IN, BUS, 2000-01-01 00:01, 10001, "A"
+TapCard, OUT, BUS, 2000-01-01 01:01, 10001, "D"
+TapCard, IN, SUBWAY, 2000-01-01 01:01, 10001, "X"
+TapCard, OUT, SUBWAY, 2000-01-01 02:01, 10001, "V"
+ViewBalance, 10001
+
+ViewBalance, 12345
+TapCard, IN, BUS, 2000-01-01 03:01, 12345, "A"
+TapCard, OUT, BUS, 2000-01-01 04:01, 12345, "B"
+TapCard, IN, SUBWAY, 2000-01-01 04:01, 12345, "B"
+TapCard, OUT, SUBWAY, 2000-01-01 05:01, 12345, "V"
+ViewBalance, 12345
+
+ViewBalance, 12345
+TapCard, IN, BUS, 2000-01-01 06:01, 12345, "A"
+TapCard, OUT, BUS, 2000-01-01 07:01, 12345, "B"
+TapCard, IN, SUBWAY, 2000-01-01 07:01, 12345, "B"
+TapCard, OUT, SUBWAY, 2000-01-01 08:01, 12345, "V"
+TapCard, IN, SUBWAY, 2000-01-01 08:10, 12345, "V"
+TapCard, OUT, SUBWAY, 2000-01-01 08:20, 12345, "G"
+ViewBalance, 12345
+
+ViewBalance, 10001
+TapCard, IN, SUBWAY, 2000-01-01 09:01, 10001, "V"
+TapCard, OUT, SUBWAY, 2000-01-01 10:01, 10001, "B"
+ViewBalance, 10001
+
+ViewBalance, 12345
+TapCard, OUT, SUBWAY, 2000-01-02 01:01, 12345, "B"
+ViewBalance, 12345
+
+SuspendCard, 12345
+TapCard, IN, SUBWAY, 2000-01-02 02:01, 12345, "A"
+TapCard, OUT, SUBWAY, 2000-01-02 03:01, 12345, "B"
+ViewBalance, 12345
+
+//if you would like to test card with negative balance, plz change the card's initial 
+balance to negative and test
+
+ViewRecent, User1
+ViewOperatingCost, 2000-01-01
+ViewMonthlyCost, User1, 2000, 1
+
+AddBalance, 12345, 20
+ViewBalance, 12345
+ReactivateCard, 12345
+CreateCard, User1, 00000
+RemoveCard, User1, 00000
+AddCard, User1, 00000
+ChangeName, User1, User2
+

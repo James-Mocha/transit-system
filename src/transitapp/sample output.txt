@@ -1,0 +1,70 @@
+MapToronto is successfully created!
+RouteBusRoute successfully added!
+RouteSubwayRoute successfully added!
+UserUser1 successfully created!
+UserUser1 successfully bought card 12345
+UserUser1 successfully bought card 10001
+Card 12345: $19.0
+12345 successfully entered BUS"A" at 1999-12-31 00:01
+12345 successfully exited BUS"D" at 1999-12-31 01:01
+Card 12345: $17.0
+Card 12345: $17.0
+12345 successfully entered SUBWAY"B" at 1999-12-31 01:10
+12345 successfully exited SUBWAY"R" at 1999-12-31 02:01
+Card 12345: $15.5
+Card 12345: $15.5
+12345 successfully entered SUBWAY"B" at 1999-12-31 03:01
+12345 successfully exited SUBWAY"B" at 1999-12-31 04:01
+Card 12345: $15.5
+Card 10001: $19.0
+10001 successfully entered BUS"A" at 2000-01-01 00:01
+10001 successfully exited BUS"D" at 2000-01-01 01:01
+10001 successfully entered SUBWAY"X" at 2000-01-01 01:01
+10001 successfully exited SUBWAY"V" at 2000-01-01 02:01
+Card 10001: $14.0
+Card 12345: $15.5
+12345 successfully entered BUS"A" at 2000-01-01 03:01
+12345 successfully exited BUS"B" at 2000-01-01 04:01
+12345 successfully entered SUBWAY"B" at 2000-01-01 04:01
+12345 successfully exited SUBWAY"V" at 2000-01-01 05:01
+Card 12345: $11.5
+Card 12345: $11.5
+12345 successfully entered BUS"A" at 2000-01-01 06:01
+12345 successfully exited BUS"B" at 2000-01-01 07:01
+12345 successfully entered SUBWAY"B" at 2000-01-01 07:01
+12345 successfully exited SUBWAY"V" at 2000-01-01 08:01
+12345 successfully entered SUBWAY"V" at 2000-01-01 08:10
+12345 successfully exited SUBWAY"G" at 2000-01-01 08:20
+Card 12345: $7.0
+Card 10001: $14.0
+10001 successfully entered SUBWAY"V" at 2000-01-01 09:01
+10001 successfully exited SUBWAY"B" at 2000-01-01 10:01
+Card 10001: $10.0
+Card 12345: $7.0
+12345 failed to exit SUBWAY"B" at 2000-01-02 01:01
+Card 12345: $7.0
+Card 12345 has been suspended.
+12345 failed to enter SUBWAY"A" at 2000-01-02 02:01
+12345 failed to exit SUBWAY"B" at 2000-01-02 03:01
+Card 12345: $7.0
+Last 3 trips for user User1 are following:
+2000-01-01T06:01, "A", take bus
+2000-01-01T07:01, "B", takeoff bus
+2000-01-01T07:01, "B", take subway
+2000-01-01T08:01, "V", takeoff subway
+It costs:4.0
+2000-01-01T08:10, "V", take subway
+2000-01-01T08:20, "G", takeoff subway
+It costs:0.5
+2000-01-01T09:01, "V", take subway
+2000-01-01T10:01, "B", takeoff subway
+It costs:4.0
+Total cost of 2000-01-01 is $17.5. The number of total number of stops/stations reached by all cardholders is 18
+In 2000, User User1's traffaic cost is $17.5
+Card 12345 added balance $20
+Card 12345: $27.0
+Card 12345 is now reactivated.
+UserUser1 successfully bought card 00000
+User User1 deleted card 00000
+User User1 added card 00000
+User User1 changed name to User2
